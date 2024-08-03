@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Portafolio Personal</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos para el header */
+        header {
+            background-color: #036; /* Color arena */
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+             overflow: hidden; /* Asegura que la marca de agua no sobresalga del contenedor */
+        }
+
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #50c878;
+        }
+
+        /* Estilos para la sección Hero */
+        .hero {
+            background-color: #b0c4de;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #800020;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #003366;
+        }
+
+        /* Estilos para la sección de dos columnas */
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 50px 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .column:first-child {
+            max-width: 50%;
+        }
+
+        .column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .column h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .column p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .column a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .column a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para la sección de galería */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #008080;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        footer .footer-section .logo img {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section .social div {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer .footer-section .social div a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 12px;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        footer .footer-section .social div a:hover {
+            background-color: #0056b3;
+        }
+        footer .footer-section.programs {
+        margin-right: 5px; /* Reducir el margen derecho */
+        }
+        footer .footer-section.institutions {
+        margin-left: -40px; /* Ajustar el margen izquierdo */
+        }
+        ooter .footer-section.profile {
+         margin-right: 5px; /* Reducir el margen derecho */
+        }
+        footer .footer-section.contact {
+        margin-left: 120px; /* Ajustar el margen izquierdo */
+        }
+        /* Estilos para los botones de contacto */
+        .btn-contact {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .btn-contact:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la sección Perfil */
+        .profile {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.0em;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        .profile h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+        }
+
+        .profile p {
+            font-size: 1em; /* Ajuste al tamaño de fuente del párrafo para coincidir con el estilo de "Asesorias personalizadas" */
+            line-height: 1.3;
+            margin-bottom: 30px; /* Margen inferior para separación visual */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://ibb.co/mG2W51X"><img src="https://i.ibb.co/2qhtCR0/57a52d73-4dfb-49c0-8a54-9aa473e764a3.jpg" alt="26eb39b8-a3b0-4103-a0a5-c5df2af6601e" /></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#services">Social</a></li>
+                <li><a href="#profile">Estrategias</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <h1>ASOCIACION DE VIVIENDAS NUEVO SINAI-ATE</h1>
+        <p>¡Bienvenidos a la Asociación Nuevo Sinaí-Ate. Fundada el 10 de diciembre de 2014, nuestra misión es promover el desarrollo económico y social de nuestros asociados y gestionar la habilitación urbana para beneficiar a nuestra comunidad.</p>
+        <a href="#profile">Introducción</a>
+    </section>
+
+    <section id="services" class="section">
+        <div class="column">
+            <img src="https://i.ibb.co/L8rYWcV/SDC11026.jpg" alt="Imagen 1">
+        </div>
+        <div class="column">
+            <h2>Sobre Nosotros</h2>
+            <p>La Asociación Nuevo Sinaí-Ate fue fundada el 10 de diciembre de 2014 con el objetivo de adquirir terrenos, ya sea a título oneroso o gratuito, y promover el desarrollo económico y social de nuestros asociados. Buscamos celebrar convenios, recibir donaciones, créditos, subsidios y gestionar la habilitación urbana y/o independización ante las autoridades correspondientes.</p>
+            <a href="" target="_blank">Equipo Directivo</a>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <img src="https://i.ibb.co/5KWXGM0/20200223-095123.jpg" alt="Imagen 1">
+        <img src="https://i.ibb.co/RQBR4cd/IMG-20230219-084824.jpg" alt="Imagen 2">
+        <img src="https://i.ibb.co/xFNs5GX/IMG-20230813-093955.jpg" alt="Imagen 3">
+        <img src="https://i.ibb.co/FJNhG4h/IMG-20150216-160401266.jpg" alt="Imagen 4">
+        <img src="https://i.ibb.co/0Gt0rCY/SDC10923.jpg" alt="Imagen 5">
+        <img src="https://i.ibb.co/VqfvC4Z/CARRETERA-6.jpg" alt="Imagen 6">
+        <img src="https://i.ibb.co/kKWQKX1/SDC10956.jpg" alt="Imagen 1">
+        <img src="https://i.ibb.co/CHnF5WY/SDC10912.jpg" alt="Imagen 2">
+        <img src="https://i.ibb.co/ynF5vNn/SDC11035.jpg" alt="Imagen 3">
+        <img src="https://i.ibb.co/BtjGgsN/SDC11748.jpg" alt="Imagen 4">
+        <img src="https://i.ibb.co/7tJKB30/FOTO-FAENA-CARRETERA.jpg" alt="Imagen 5">
+        <img src="https://i.ibb.co/tChN6Mm/IMG-20230326-080642.jpg" alt="Imagen 6">
+    </section>
+
+    <footer>
+                <div class="footer-section services">
+            <h3>Proyectos en Curso</h3>
+            <ul>
+                <li>Estamos trabajando en la adquisición de terrenos y en proyectos de desarrollo económico para mejorar la calidad de vida de nuestros asociados. Mantente al tanto de nuestras iniciativas y cómo puedes participar.</li>
+            </ul>
+        </div>
+        <div class="footer-section legal">
+            <h3>Derechos de los Asociados</h3>
+            <ul>
+                <li>Voz y Voto</li>
+                <li>Disfrute de derechos y Servicios</li>
+                <li>Elegir y Ser Elegido</li>
+                <li>Fiscalización de Dirigentes</li>
+            </ul>
+        </div>
+        <div class="footer-section institutions">
+            <h3>Obligaciones de los Asociados</h3>
+            <ul>
+                <li>Asistencia a Actividades</li>
+                <li>Participación en Asambleas</li>
+                <li>Cumplimiento de comisiones</li>
+                <li>Respetos a directivos</li>
+                <li>Cumplimiento de Estatuto</li>
+            </ul>
+        </div>
+        <div class="footer-section profile" id="profile">
+            <h3>Estructura legal</h3>
+            <p>
+                La asociación está constituida con Personería Jurídica N° 13358595 y RUOS N° 2236-2023, con vigencia indefinida según nuestro estatuto.
+            </p>
+        </div>
+        <div class="footer-section contact" id="contact">
+            <h3>Contáctenos</h3>
+            <ul>
+                <li><a href="mailto:alexlazacoh@gmail.com" class="btn-contact">Email: </a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=51923197887" class="btn-contact">WhatsApp</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
